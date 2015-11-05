@@ -1,5 +1,4 @@
 FROM    alpine:3.2
-MAINTAINER  SvenDowideit@home.org.au
 
 RUN apk update && \
     apk add socat && \
