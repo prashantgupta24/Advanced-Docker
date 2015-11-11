@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker rmi ncsu-app
+docker rmi localhost:5000/ncsu:latest
+docker build -t ncsu-app .
+docker tag ncsu-app localhost:5000/ncsu:latest
+docker push localhost:5000/ncsu:latest

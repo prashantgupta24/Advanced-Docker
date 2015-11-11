@@ -1,0 +1,8 @@
+#!/bin/sh
+
+docker pull localhost:5000/ncsu:latest
+docker stop app2
+docker rm app2
+docker rmi localhost:5000/ncsu:current  
+docker tag localhost:5000/ncsu:latest localhost:5000/ncsu:current
+docker run -p 50102:8080 -d --name app2 localhost:5000/ncsu:latest
