@@ -1,9 +1,6 @@
 # Advanced-Docker
 
 
-    
-
-
 1) **File IO**: You want to create a container for a legacy application. You succeed, but you need access to a file that the legacy app creates.
 
 * Create a container that runs a command that outputs to a file.
@@ -43,6 +40,10 @@
 
     docker run --link myapp:server --rm -it --name myapp2 app2 curl server:9001
     
+######Screencast:
+
+![Image](https://github.com/prashantgupta24/Advanced-Docker/blob/master/Screencasts/hw4_1.gif)
+
 2) **Ambassador pattern**: Implement the remote ambassador pattern to encapsulate access to a redis container by a container on a different host.
 
 * Use Docker Compose to configure containers.
@@ -84,10 +85,14 @@
 
 ######Commands for running the redis client:
 
-     curl 0.0.0.0/7379/ping
-     curl 0.0.0.0/7379/SET/mykey/helloworld
+     curl 0.0.0.0/7379/ping ----> PONG
+     curl 0.0.0.0/7379/SET/mykey/helloworld ----> OK
      curl 0.0.0.0/7379/GET/mykey ----> helloworld
      
+######Screencast:
+
+![Image](https://github.com/prashantgupta24/Advanced-Docker/blob/master/Screencasts/hw4_2.gif)
+
 3) **Docker Deploy**: Extend the deployment workshop to run a docker deployment process.
 
 * A commit will build a new docker image.
@@ -136,3 +141,7 @@
         docker rmi localhost:5000/ncsu:current  
         docker tag localhost:5000/ncsu:latest localhost:5000/ncsu:current
         docker run -p 50101:8080 -d --name app1 localhost:5000/ncsu:latest 
+        
+######Screencast:
+
+![Image](https://github.com/prashantgupta24/Advanced-Docker/blob/master/Screencasts/hw4_3.gif)
